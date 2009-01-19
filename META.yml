@@ -1,0 +1,21 @@
+--- #YAML:1.0
+name:                Dotiac-addon-unparsed
+version:             0.1
+abstract: |-
+  Work with raw Django Template Code
+license:             MIT
+author:              
+  - Marc Lucksch
+distribution_type:   module
+requires:     
+    Dotiac::DTL: 0.2
+provides:
+   Dotiac::DTL::Addon::unparsed:
+     file: lib/Dotiac/DTL/Addon/unparsed.pm
+     version: 0.1
+   Dotiac::DTL::Tag::unparsed:
+     file: lib/Dotiac/DTL/Tag/unparsed.pm
+     version: 0.1
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
