@@ -2,7 +2,7 @@
 #unparsed.pm
 #Last Change: 2009-01-16
 #Copyright (c) 2009 Marc-Seabstian "Maluku" Lucksch
-#Version 0.1
+#Version 0.2
 ####################
 #This file is an addon to the Dotiac::DTL project. 
 #http://search.cpan.org/perldoc?Dotiac::DTL
@@ -20,7 +20,7 @@ use base qw/Dotiac::DTL::Tag/;
 use strict;
 use warnings;
 
-our $VERSION=0.1;
+our $VERSION=0.2;
 
 sub new {
 	my $class=shift;
@@ -72,14 +72,14 @@ sub perl {
 	my $id=shift;
 	$self->SUPER::perl($fh,$id,@_);
 	print $fh "my ";
-	print $fh Data::Dumper->Dump([$self->{content}],["\$content$id"]);
+	print $fh (Data::Dumper->Dump([$self->{content}],["\$content$id"]));
 	if ($self->{filters}) {
 		print $fh "my ";
-		print $fh Data::Dumper->Dump([$self->{filters}],["\$filters$id"]);
+		print $fh (Data::Dumper->Dump([$self->{filters}],["\$filters$id"]));
 	}
 	if ($self->{var}) {
 		print $fh "my ";
-		print $fh Data::Dumper->Dump([$self->{var}],["\$var$id"]);
+		print $fh (Data::Dumper->Dump([$self->{var}],["\$var$id"]));
 	}
 	return $self->{n}->perl($fh,$id+1,@_)
 }

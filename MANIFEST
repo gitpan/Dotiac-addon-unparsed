@@ -7,5 +7,6 @@ Changes
 META.yml
 README
 t/1_tag_unparsed.t
+t/4_pod.t
 t/tag_unparsed.html
 t/Dtest.pm
